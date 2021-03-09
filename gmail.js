@@ -26,6 +26,7 @@ puppeteer.use(AdblockerPlugin({ blockTrackers: true }))
       let lastName = randomName.last().toString()
       let numbers = Math.floor(Math.random() * 1000);
       let userName = randomName.first().toString() + randomName.last().toString() + numbers 
+      const email = "gmail.com"
       const passWord = "RJDxSGB123ok"
       await page.goto('https://accounts.google.com/signup/v2/webcreateaccount?hl=en&flowName=GlifWebSignIn&flowEntry=SignUp')
       
@@ -115,7 +116,7 @@ puppeteer.use(AdblockerPlugin({ blockTrackers: true }))
               
               console.log(`[*] Success: ${userName}|${passWord} | Result saved! resultSuccess.txt`);
         
-              fsa.appendFile("resultSuccess.txt", `${userName}|${passWord}\n`, {encoding: 'utf8'});
+              fsa.appendFile("resultSuccess.txt", `${userName}+${email} |${passWord}\n`, {encoding: 'utf8'});
               browser.close()
             })()}).catch(e => {
                 console.log(`[*] Automation is Failed, Run again!`)
