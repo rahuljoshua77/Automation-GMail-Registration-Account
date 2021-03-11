@@ -5,8 +5,6 @@ const fsa = require("async-file");
 puppeteer.use(StealthPlugin())
 const get = require('readline-sync')
 
-const AdblockerPlugin = require('puppeteer-extra-plugin-adblocker')
-puppeteer.use(AdblockerPlugin({ blockTrackers: true }))
 
 
 
@@ -17,9 +15,7 @@ puppeteer.use(AdblockerPlugin({ blockTrackers: true }))
       ignoreHTTPSErrors: true,
       slowMo: 0,
       args: ['--window-size=1400,900',
-      '--remote-debugging-port=9222',
-      "--remote-debugging-address=0.0.0.0", // You know what your doing?
-      '--disable-gpu', "--disable-features=IsolateOrigins,site-per-process", '--blink-settings=imagesEnabled=true'
+      '--disable-gpu'
       ]})
       const page = await browser.newPage()
       let firstName = randomName.first().toString()
