@@ -11,7 +11,7 @@ const get = require('readline-sync')
 ;(async () => {
   try{
       const browser = await puppeteer.launch({
-      headless: false,
+      headless: true,
       ignoreHTTPSErrors: true,
       slowMo: 0,
       args: ['--window-size=1400,900',
